@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Dates</title>
+</head>
+<body>
+
+    <!-- Get Property -->
+
+    <p id="demo"></p>
+    
+    <p id="time"></p>
+
+    <p id="dateTime"></p>
+
+    <p id="getTime"></p>
+
+    <p id="getSeconds"></p>
+
+    <p id="getMinutes"></p>
+
+    <p id="getHours"></p>
+
+    <p id="getDate"></p>
+
+    <p id="getDays"></p>
+
+    <p id="getMonth"></p>
+
+    <p id="getFullYear"></p>
+
+    <!-- Set Property -->
+
+    <p id="setFullYear"></p>
+
+    <p id="setMonth"></p>
+
+    <p id="setDate"></p>
+
+    <p id="setHours"></p>
+
+    <p id="setMinutes"></p>
+
+    <p id="setSeconds"></p>
+
+    <p id="setTime"></p>
+
+    <script>
+        
+        const date = new Date(86400000); // treated as a milisecond from 1970
+        
+        document.getElementById("demo").innerHTML = date;
+
+        document.getElementById("time").innerHTML = date.toUTCString();
+
+        document.getElementById("dateTime").innerHTML = date.toDateString();
+
+        
+        const getdate = new Date();
+
+        // getTime
+
+        document.getElementById("getTime").innerHTML = "Time : " + getdate.getTime();
+
+
+        // getSeconds
+
+        document.getElementById("getSeconds").innerHTML = "Seconds : " + getdate.getSeconds();
+
+
+        // getMinutes
+
+        document.getElementById("getMinutes").innerHTML = "Minutes : " + getdate.getMinutes();
+
+
+        // getHours
+
+        document.getElementById("getHours").innerHTML = "Hours : " + getdate.getHours();
+
+
+        // getDate
+
+        document.getElementById("getDate").innerHTML = "Date : " + getdate.getDate();
+
+
+        // getDays
+
+        document.getElementById("getDays").innerHTML = "Day : " + getdate.getDay();
+
+
+        // getMonth
+
+        document.getElementById("getMonth").innerHTML = "Month : " + getdate.getMonth();
+
+        
+        // getFullYear
+
+        document.getElementById("getFullYear").innerHTML = "Year : " + getdate.getFullYear();
+        
+
+        // setTime
+
+        const setdate = new Date();
+
+        // setFullYear
+        
+        setdate.setFullYear(2020);
+
+        document.getElementById("setFullYear").innerHTML = "Set Year : " + setdate;
+
+
+        // setMonth
+
+        setdate.setMonth(11);
+
+        document.getElementById("setMonth").innerHTML = "Set Month : " + setdate;
+
+
+        // setDate
+
+        setdate.setDate(7);
+
+        document.getElementById("setDate").innerHTML = "Set Date : " + setdate;
+
+        
+        // setHours
+
+        setdate.setHours(2);
+
+        document.getElementById("setHours").innerHTML = "Set Hour : " + setdate;
+
+
+        // setMinutes
+
+        setdate.setMinutes(25);
+
+        document.getElementById("setMinutes").innerHTML = "Set Minutes : " + setdate;
+
+
+        // setSeconds
+
+        setdate.setSeconds(30);
+
+        document.getElementById("setSeconds").innerHTML = "Set Seconds : " + setdate;
+
+    </script>
+</body>
+</html>

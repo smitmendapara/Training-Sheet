@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sets</title>
+</head>
+<body>
+    <script>
+
+        // create Set using pass an array
+
+        const mySet = new Set(["1", "2"]);
+
+        // add elements to Set
+
+        mySet.add("3");
+
+        mySet.add("4");
+
+        mySet.add("a");
+
+        mySet.add("b");
+
+        console.log(mySet.size);
+
+
+        mySet.delete("1");
+
+
+        // forEach with lamda
+
+        mySet.forEach(element => {
+            console.log(element);
+        });
+
+
+        // forEach with function
+
+        mySet.forEach(function(element) {
+            console.log(element);
+        })
+
+        for (const element of mySet.values()) {
+            console.log("Value : " + element);
+        }
+
+        console.log(mySet.values()); // get the new Iterator with all elements of the Set
+
+    </script>
+</body>
+</html>

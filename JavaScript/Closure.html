@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Closure</title>
+</head>
+<body>
+    <script>
+
+        var Person = function(fName) {
+            var name = fName;
+
+            this.getUser = function() {
+                return name;
+            }
+        }
+
+        var answer = new Person("Anuj");
+
+        console.log( answer.getUser() );
+
+
+        // get object from outer reference
+
+        function randomFunc() {
+            var object = {
+                name: "abhi", 
+                age: 45
+            };
+
+            return function() {
+                console.log(object.name + " is "+ "awesome"); 
+            }
+        }
+
+        var myFunction = randomFunc();
+
+        myFunction();
+
+    </script>
+</body>
+</html>

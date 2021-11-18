@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Strings</title>
+</head>
+<body>
+    <script>
+        
+        // for indexof
+
+        let string = "hello javascript!! hello java!! hello php!!";
+
+        let target = "hello";
+
+        let position = 0;
+
+        while(true) {
+            let findIndex = string.indexOf("hello", position);
+
+            if(findIndex == -1) {
+                break;
+            }
+
+            console.log(`Position : ${findIndex}`);
+            position = findIndex + 1;
+        }
+
+
+        // for lastIndexof
+
+        let string2 = "hello javascript!! hello java!! hello php!!";
+
+        console.log(`Position : ${string2.lastIndexOf("hello")}`);
+
+        
+        // multiline string
+
+        let string3 = `list : 
+        1. Aman
+        2. Anuj
+        3. Akhil`;
+
+        console.log(string3);
+
+        let string4 = "list : \n1.Aman \n2.Anuj \n3.Akhil";
+
+        console.log(string4);
+
+
+        // bitwise NOT
+
+        console.log(~2); // ~n = -(n + 1)
+
+        console.log(~(-1));
+
+
+        // incudes, startwith and endwith
+
+        let string5 = "hello javascript";
+
+        let answer = string5.includes("hello");
+
+        let answer2 = string5.startsWith("hello");
+
+        let answer3 = string5.endsWith("script");
+
+        console.log(answer);
+
+        console.log(answer2);
+
+        console.log(answer3);
+
+        
+        // slice, substring and substring
+
+        let string6 = "stringify";
+
+        console.log(string6.slice(2, 5));
+
+        console.log(string6.slice(-3, -1));
+
+        console.log(string6.substring(2, 5));
+
+        console.log(string6.substring(5, 2));
+
+        console.log(string6.substr(2, 5));  
+
+        
+        // codePointAt and fromCodePoint
+
+        console.log( "z".codePointAt(0) ); // 122
+
+        console.log( "Z".codePointAt(0) ); // 90
+
+        console.log(String.fromCodePoint(90)); // Z
+
+        let string7 = '';
+        let string8 = '';
+
+        for (let i = 65; i <= 90; i++) {
+            string7 += String.fromCodePoint(i);
+        }
+
+        for (let i = 97; i <= 122; i++) {
+            string8 += String.fromCodePoint(i);
+        }
+        
+        console.log(string7 + " " + string8);
+
+    </script>
+</body>
+</html>

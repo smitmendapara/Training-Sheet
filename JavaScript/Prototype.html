@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Object Prototype</title>
+</head>
+<body>
+    <script>
+
+        // array prototype
+
+        var arr = [];
+
+        arr.push(2);
+
+        console.log(arr);
+
+
+        // date prototype
+
+        const birthDate = new Date("19 August, 2000");
+       
+        const date = birthDate.getDate();
+
+        const month = birthDate.getMonth();
+
+        console.log(date);
+
+        console.log(month);
+
+
+        // math prototype 
+
+        const numbers = [1, 4, 5, 3, 8];
+
+        const max = Math.max.apply(null, numbers);
+
+        const min = Math.min.apply(null, numbers);
+
+        console.log(max);
+
+        console.log(min);
+
+    </script>
+</body>
+</html>

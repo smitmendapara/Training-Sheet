@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Maps</title>
+</head>
+<body>
+    <script>
+
+        // create Map using pass an array
+
+        const myMap = new Map([
+            ["first", 1],
+            ["second", 2],
+            ["third", 3]
+        ]);
+
+        // set the element to Map
+
+        myMap.set("fourth", 4);
+
+        console.log(myMap.size);
+
+
+        // forEach with key and value    
+
+        myMap.forEach(function(value, key) {
+            console.log(key, value);
+        });
+
+        for (const x of myMap.entries()) {
+            console.log(x);
+        }
+
+        
+        // get, has and delete
+
+        console.log(myMap.get("third"));
+
+        console.log(myMap.has("fourth"));
+
+        console.log(myMap.delete("fourth"));
+
+    </script>
+</body>
+</html>

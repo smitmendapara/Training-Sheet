@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Callbacks</title>
+</head>
+<body>
+    <script>
+        
+        function Three(sum) {
+            console.log(Math.floor(sum / 2));
+        }
+
+        function Two(sum) {
+            console.log(sum * 2);
+        }
+
+        function One(num1,num2,operation) {
+            var sum = num1 + num2;
+            
+            operation(sum);
+        }
+
+        One(4, 5, Two);
+        
+        One(4, 5, Three);
+
+    </script>
+</body>
+</html>

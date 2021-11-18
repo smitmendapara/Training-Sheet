@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>RegExp</title>
+</head>
+<body>
+    <script>
+        
+        // search 
+
+        const text = "hello Anuj hello Abhi";
+
+        const result = text.search("Anuj");
+
+        console.log(result);
+
+
+        // replace
+
+        const result2 = text.replace("Abhi", "Aman");
+
+        console.log(result2);
+
+
+        // for insensitive case (/---/i)
+
+        const result3 = text.match(/anuj/i);
+
+        console.log(result3);
+
+
+        // for global match (/---/g)
+
+        const result4 = text.match(/hello/g);
+
+        console.log(result4);
+
+
+        // for mutiline match (/---/m)
+
+        const text2 = "\nhello \nAnuj";
+
+        const result5 = text2.match(/Anuj/m);
+
+        console.log(result5);
+
+
+        // for [abc] any character
+
+        const result6 = text.match(/[e]/g);
+
+        console.log(result6);
+
+
+        // for [0-9] any number between 0 and 9
+
+        const result7 = text.match(/[a-l]/g);
+
+        console.log(result7);
+
+
+        // for (x|y) any of x or y
+
+        const result8 = text.match(/(e|l)/g);
+
+        console.log(result8);
+
+
+        // for digit (\d)
+
+        const text3 = "hello anuj 123";
+
+        const result9 = text3.match(/\d/g);
+
+        console.log(result9);
+
+
+        // for whitespace (\s)
+
+        const result10 = text3.match(/\s/g);
+        
+        console.log(result10);      
+        
+    </script>
+</body>
+</html>

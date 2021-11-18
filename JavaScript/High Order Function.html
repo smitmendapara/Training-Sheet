@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>High Order Function</title>
+</head>
+<body>
+    <script>
+        
+        // return function by another function
+        function myFunction(value) {
+            console.log(value);
+        
+            return function() {
+                return "Do Something";
+            }
+        }   
+
+        var receive = myFunction("Hello JavaScript");
+        
+        console.log( receive() );
+
+
+        // pass function as a argument
+
+        function sum() {
+            console.log( 2 + 3 );
+        }
+
+        function check(myFun) {
+            myFun();
+        }
+
+        check(sum);
+
+    </script>
+</body>
+</html>

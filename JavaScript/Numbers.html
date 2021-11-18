@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Numbers</title>
+</head>
+<body>
+    <script>
+        
+        console.log(1 * 1000 === 1e3);
+
+
+        console.log(1e6); // 1.000000
+        
+        console.log(1e-6); // 0.000001
+
+
+        console.log(0xff); // hexa decimal
+        
+        console.log(0xFF); // same as above
+
+
+        let binary = 0b11111111; // binary for 255
+        let octal = 0o377; // octal for 255
+
+        console.log(binary == octal);
+
+
+        let num = 255;
+
+        console.log(num.toString(16)); // hexa decimal (16 base)
+        
+        console.log(num.toString(2)); // binary (2 base)
+
+
+        console.log(1234..toString(2)); // two dot for call method
+
+
+        // floor
+
+        console.log(Math.floor(3.4));
+        
+        console.log(Math.floor(-3.4));
+
+
+        // ceil
+
+        console.log(Math.ceil(3.4));
+       
+        console.log(Math.ceil(-3.4));
+
+
+        // trunc
+
+        console.log(Math.trunc(3.4));
+        
+        console.log(Math.trunc(-3.4));
+
+
+        let number = 1.23456;
+
+        console.log(Math.round(number * 100) / 100 );
+        
+        console.log(number.toFixed(1));
+
+
+        // NAN
+
+        console.log(isNaN("string"));
+        
+        console.log(isNaN(2));
+
+        
+        console.log(NaN === NaN); // false
+
+        
+        // Finite
+
+        console.log( isFinite(20) );
+       
+        console.log( isFinite("string") );
+        
+        console.log( isFinite(Infinity) );
+
+        
+        // parseInt and parseFloat
+        
+        console.log( parseInt("100px") ); // 100
+        
+        console.log( parseFloat("12.5em") ); // 12.5
+
+        console.log( parseInt("12.3") ); // 12, only the integer part is returned
+        
+        console.log( parseFloat("12.3.4") );
+
+        console.log( parseInt("a12.3") );
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Class</title>
+</head>
+<body>
+    <script>
+        
+        // simple class
+
+        class Person {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+
+            myFunction() {
+                let date = new Date();
+                return date.getFullYear() - this.year;
+            }
+        }
+
+        let myClass = new Person("Anuj", 2010);
+
+        console.log(myClass.name + " " + myClass.year);
+
+        console.log(myClass.myFunction());
+
+
+        // class inheritance
+
+        class Car {
+            constructor(brand) {
+                this.brand = brand;
+            }
+            
+            carMethod() {
+                return this.brand;
+            }
+        }
+
+        class Model extends Car {
+            constructor(brand, type) {
+                super(brand);
+                this.type = type;
+            }
+
+            modelMethod() {
+                return "Brand is : " + this.carMethod() + " Type is : " + this.type;
+            }
+
+        }
+
+        let myCar = new Model("BMW", "A1");
+
+        console.log(myCar.modelMethod());
+
+        // getter and setter
+
+        class Strong {
+            constructor(value) {
+                this.entity = value;
+            }
+
+            get getEntity() { 
+                return this.entity; 
+            }
+
+            set setEntity(x) {
+                this.entity = x;
+            }
+        }
+
+        let myStrong = new Strong("ABC");
+
+        myStrong.setEntity = "XYZ";
+
+        console.log(myStrong.getEntity);
+
+        // static method
+
+        class Main {
+            constructor(params) {
+                this.params = params;
+            }
+
+            static model(myMain) {
+                return "Hello " + myMain.params;
+            }
+        }
+
+        let myMain = new Main("JavaScript!!");
+
+        console.log(Main.model(myMain));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Scope Chain</title>
+</head>
+<body>
+    <script>
+
+        // global scope
+
+        var value = 10;
+
+        function myFunction() {
+            return value;
+        }
+
+        function callFunction() {
+            return myFunction();
+        }
+
+        console.log( callFunction() );
+
+
+        // function scope
+
+        function checkScope() {
+            var answer = 20;
+
+            var sum = function() {
+                console.log( answer * 5 );
+            }
+        }
+
+        console.log( answer );
+
+        sum();
+
+
+        // block scope
+
+        {
+            let random = 15;
+        }
+
+        console.log( random );
+
+
+        // scope chain
+
+        var y = 50;
+
+        function parentFunction() {
+            var x = 100;
+
+            var childFunction = function() {
+                console.log(x);
+            }
+
+            var grandChild = function() {
+                console.log(y);
+            }
+
+            childFunction();
+
+            grandChild();
+        }
+
+        parentFunction();
+
+    </script>
+</body>
+</html>

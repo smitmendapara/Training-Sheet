@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        
+        let myPromise = new Promise(function(resolve, reject) {
+            var number = 10;
+
+            if (number == 10) {
+                resolve("Ok");
+            }
+            else {
+                reject("Error");
+            }
+        });
+
+        myPromise.then(
+            function(value) {
+                myFunction(value);
+            },
+            function(error) {
+                myFunction(error);
+            }  
+        )
+
+        function myFunction(arg) {
+            console.log(arg);
+        }
+
+        // setTimeout
+
+        setTimeout(function() { customFunction("Hello JavaScript!!") }, 3000);
+
+        function customFunction(message) {
+            console.log(message);
+        }
+
+    </script>
+</body>
+</html>

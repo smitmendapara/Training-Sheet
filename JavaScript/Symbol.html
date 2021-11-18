@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Symbol Type</title>
+</head>
+<body>
+    <script>
+       
+        let identifier1 = Symbol("value");
+    
+        let identifier2 = Symbol("value");
+
+        function check() {
+           
+            if (identifier1 == identifier2) {
+               console.log("true");
+            }
+        
+            else {
+                console.log("false");
+            }
+        }
+
+        let answer = check();
+        
+        // for convert into string
+
+        console.log(identifier2.toString);
+
+        // for get the identifier description
+
+        console.log(identifier1.description);
+
+    </script>
+</body>
+</html>

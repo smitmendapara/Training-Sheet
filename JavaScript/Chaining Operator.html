@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Chaining Operator</title>
+</head>
+<body>
+    <script>
+        
+        let user = null;
+        
+        console.log( user?.address );
+
+
+        let object1 = {
+            myFunction() {
+                console.log("My Function!!");
+            }
+        }
+
+        let object2 = {};
+
+        object1.myFunction?.();
+        
+        object2.myFunction?.();
+
+    </script>
+</body>
+</html>

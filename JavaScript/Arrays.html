@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ArrayMethod</title>
+</head>
+<body>
+    <p id="demo"></p>
+    
+    <p id="shift"></p>
+    
+    <p id="unshift"></p>
+
+    <p id="delete"></p>
+    
+    <p id="splice"></p>
+
+    <p id="sort"></p>
+
+    <p id="reverse"></p>
+
+    <button onclick="myFunction()">Click Me!!</button>
+
+    <p id="alphaSorting"></p>
+
+    <button onclick="myFunction2()">Click Me!!</button>
+
+    <p id="numericSorting"></p>
+
+    <p id="map"></p>
+
+    <p id="filter"></p>
+
+    <p id="reduce"></p>
+
+    <p id="every"></p>
+
+    <p id="some"></p>
+
+    <script>
+        
+        // join with *
+        
+        const array = [1, 2, 3, 4, 5, 6];
+
+        document.getElementById("demo").innerHTML = array.join(" * ");
+
+        
+        // shift array
+
+        array.shift();
+
+        document.getElementById("shift").innerHTML = array;
+
+
+        // unshift array
+
+        array.unshift("7");
+
+        document.getElementById("unshift").innerHTML = array;
+
+
+        // delete array element
+
+        delete array[0];
+
+        document.getElementById("delete").innerHTML = array;
+
+
+        // splice array
+
+        array.splice(0,1);
+
+        document.getElementById("splice").innerHTML = array;
+
+
+        // sort and reverse array elements
+
+        const array2 = [40, 100, 1, 5, 25, 10];
+
+        document.getElementById("sort").innerHTML = array2.sort();
+
+        document.getElementById("reverse").innerHTML = array2.reverse();
+
+
+        // sorting with onclick events
+
+        // alphaSorting
+
+        document.getElementById("alphaSorting").innerHTML = array2;
+
+        function myFunction() {
+            array2.sort();
+
+            document.getElementById("alphaSorting").innerHTML = array2;
+        }
+
+        // numericSorting
+
+        document.getElementById("numericSorting").innerHTML = array2;
+
+        function myFunction2() {
+            array2.sort( function (a, b) {return (a - b)});
+
+            document.getElementById("numericSorting").innerHTML = array2;
+        }
+
+
+        // map
+
+        const numbers1 = [45, 4, 9, 16, 25];
+        
+        const numbers2 = numbers1.map(mapFunction);
+
+        function mapFunction(value) {
+            return value * 5;
+        }
+
+        document.getElementById("map").innerHTML = numbers2;
+
+
+        // filter 
+        
+        const numbers3 = numbers1.filter(filterFunction);
+
+        function filterFunction(value) {
+            return value > 18;
+        }
+
+        document.getElementById("filter").innerHTML = numbers3;
+
+
+        // reduce
+
+        const numbers4 = numbers1.reduce(reduceFunction);
+
+        function reduceFunction(target, value) {
+            return target += value;
+        }
+
+        document.getElementById("reduce").innerHTML = numbers4;
+
+        
+        // every
+
+        const numbers5 = numbers1.every(everyFunction);
+
+        function everyFunction(value) {
+            return value > 18;
+        }
+
+        document.getElementById("every").innerHTML = numbers5;
+
+
+        // some
+
+        const numbers6 = numbers1.some(someFunction);
+
+        function someFunction(value) {
+            return value > 18;
+        }
+
+        document.getElementById("some").innerHTML = numbers6;
+
+    </script>
+</body>
+</html>

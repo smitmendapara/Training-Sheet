@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>This Keyword</title>
+</head>
+<body>
+    <script>
+        
+        let myObject = {
+            fName : "abc",
+            lName : "xyz", 
+
+            fullName : function() {
+                
+                console.log(this);
+                
+                return this.lName;
+            }
+        }
+
+        console.log(myObject.fullName());
+
+        
+        // assign new function
+
+        function another() {
+            return this.fName;
+        }
+
+        myObject.another = another;
+        
+        console.log( myObject.another() );
+        
+        console.log( myObject["another"]() );
+
+       
+        // check this value
+        
+        function check() {
+            alert(this);
+        }
+
+        check();
+
+    </script>
+</body>
+</html>

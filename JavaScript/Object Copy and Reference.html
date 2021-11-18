@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Copy and Reference</title>
+</head>
+<body>
+    <script>
+       
+       // reference object
+       
+        let user = {
+            age : 20,
+            size : 30
+        }
+
+        let customer = user;
+
+        customer.age = 25;    
+
+        console.log(user.age);
+
+       
+        // copy object
+       
+        let customer1 = {};
+
+        for (let key in user) {
+            customer1[key] = user[key];
+        }
+
+        customer1.size = 28;
+
+        console.log(user.size);
+
+
+        // using assign method
+
+        let object = {
+            fName : "anuj",
+            lName : "abhi"
+        }
+
+        let object2 = {};
+
+        Object.assign(object2, object);
+
+        console.log(object2.fName);
+
+      
+        // nested object
+      
+        let nestedObject = {
+            fName : "abc",
+            lName : "xyz",
+            size : {
+                age : 20,
+                year : 5
+            }
+        }
+
+        console.log( nestedObject.size.age );
+
+    </script>
+</body>
+</html>
