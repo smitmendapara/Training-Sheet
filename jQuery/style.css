@@ -1,0 +1,10 @@
+p.highlight {
+    background: yellow;
+}
+#key {
+    background-color: tomato;
+    display: none;
+}
+span {
+    display: none;
+}
