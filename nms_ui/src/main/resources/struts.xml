@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.action.excludePattern" value=".*serverEndPoint"/>
+
+    <package name="abc" extends="struts-default">
+
+        <result-types>
+
+            <result-type name="json" class="org.apache.struts2.json.JSONResult">
+
+                <param name="noCache">true</param>
+
+                <param name="excludeNullProperties">true</param>
+
+                <param name="enableGZIP">true</param>
+
+            </result-type>
+
+        </result-types>
+
+        <!-- verify user login credentials -->
+
+        <action name="loginProcess" class="action.login.Login" method="executeLogin">
+
+            <result name="success">WEB-INF/index.jsp</result>
+
+            <result name="error">login.jsp</result>
+
+        </action>
+
+        <!-- LOGOUT ACTION -->
+
+        <action name="logoutProcess" class="action.logout.Logout" method="executeLogout">
+
+            <result name="success">login.jsp</result>
+
+        </action>
+
+        <!-- DISCOVERY ACTION -->
+
+        <action name="discover">
+
+            <result>WEB-INF/index.jsp</result>
+
+        </action>
+
+        <!-- enter data into discovery table -->
+
+        <action name="discoveryProcess" class="action.discover.Discovery" method="insertDevice">
+
+            <result name="success" type="json">WEB-INF/index.jsp</result>
+
+        </action>
+
+        <action name="discoverData" class="action.discover.Discovery" method="executeDiscovery">
+
+            <result name="success" type="json"/>
+
+        </action>
+
+        <action name="discoveryTable" class="action.discover.Discovery" method="getDiscoverData">
+
+            <result name="success" type="json" />
+
+        </action>
+
+        <action name="fetchDeviceData" class="action.discover.Discovery" method="editDevice">
+
+            <result name="success" type="json">WEB-INF/index.jsp</result>
+
+        </action>
+
+        <action name="updateDevice" class="action.discover.Discovery" method="updateDeviceData">
+
+            <result name="success" type="json">WEB-INF/index.jsp</result>
+
+        </action>
+
+        <action name="discoverDelete" class="action.discover.Discovery" method="deleteDiscoverData">
+
+            <result name="success">WEB-INF/index.jsp</result>
+
+        </action>
+
+        <!-- MONITOR ACTION -->
+
+        <action name="monitor">
+
+            <result>WEB-INF/index.jsp</result>
+
+        </action>
+
+        <!-- monitor button action -->
+
+        <action name="monitorForm" class="action.monitor.Monitor" method="loadMonitorData">
+
+            <result name="success" type="json" />
+
+        </action>
+
+        <action name="monitorProcess" class="action.monitor.Monitor" method="provisionMonitor">
+
+            <result name="success" type="json" />
+
+        </action>
+
+        <action name="monitorTable" class="action.monitor.Monitor" method="getMonitorData">
+
+            <result name="success" type="json" />
+
+        </action>
+
+        <action name="monitorDelete" class="action.monitor.Monitor" method="deleteMonitorData">
+
+            <result name="success" type="json" />
+
+        </action>
+
+        <!-- DASHBOARD ACTION -->
+
+        <action name="dashboardTable" class="action.dashboard.Dashboard" method="getDeviceDashboardData">
+
+            <result name="success" type="json" />
+
+        </action>
+
+        <action name="homeDashboardData" class="action.dashboard.Dashboard" method="getHomeDashboardData">
+
+            <result name="success" type="json" />
+
+        </action>
+
+    </package>
+
+</struts>
